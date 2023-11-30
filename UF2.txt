@@ -1,0 +1,73 @@
+UF2
+
+Arrays 
+
+var array = new Array()
+
+Si li dones un index que no existeix, l'amplia i l'omple i assigna el valor
+
+array.length --> la longitut màxima d'un array és de 32 bits
+
+var fruites =["poma","pera","platan"];
+
+
+Pila --> LIFO last in first out--> pila de plats
+
+CUA -->  FIFO first in frist out  -->cua del cine
+
+LIFO
+push --> apila elements a l'array
+pop --> treu l'ultim element i te'l retorna color.pop()
+
+FIFO
+push --> 
+shift -->
+
+Funcions 
+
+concat 
+slice --> retorna un troç de l'array 
+indexOf --> et retorna el index d'un element 
+lastIndexOf --> et retorna l'index d'un element des de darrere
+sort 
+reverse 
+
+Iteració dels arrays: 
+
+recorrer per buscar elements que compleix un criteri 
+
+every --> si tots compleixen un criteri
+filter --> fa un filtre
+forEach --> pots fer el que vulguis
+map --> executa la funció en tots els elements de l'array 
+some -->torna true o false si hi ha algun que cumpleix la funció 
+
+
+FUNCIONS: 
+
+Les funcions són objectes 
+
+Els parametres d'una funció venen en un array que es diu arguments, això significa que li pots passar arguments de més o menys
+
+Maneres de definir una funció: 
+
+function nomFuncio(parametre='valorperdefecte'){
+
+}
+
+let nomFuncio('parametre=valorperdefecte'){
+
+}
+
+let nomFuncio = (parametre='valorperdefecte')=>`Hola${parametre}`
+
+function sobrecarrega(){
+    switch(arguments.length){
+        case 0:
+            logica 1
+        case 1:
+            logica 2
+    }
+}
+
+OBJECTES:
