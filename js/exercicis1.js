@@ -37,10 +37,9 @@ function exerciciColors(){
     let metodeat = arrayInicial.at(0);
     let concatenacio = arrayMutable.concat('Neus'); 
     let copia = arrayMutable.copyWithin(1);
-    let entrades = arrayInicial.entries(); //TODO
     let tots = arrayInicial.every(mesPetit);
     let filtrat = arrayInicial.filter(mesPetit);
-    let afegit = arrayMutable2.fill('Angelo');
+    let afegit = arrayMutable2.fill('Angelo',0,1);
     let arrayNou = new Array('Hola soc un nou array');
     let esVero = (alumnes)=>alumnes =='Vero'; // passa l'array i busca en ell quina coincidència hi ha
     let Vero = arrayInicial.find(esVero);
@@ -68,9 +67,14 @@ function exerciciColors(){
     //Funció que copia un element al array
     document.writeln(`<br>4. ${arrayInicial} -> copyWithin('1') -> ${copia}</br>`);
 
+   //Crea un iterador i aleshores itera entre les parelles de clau valor
+    document.writeln(`<br>5. ${arrayInicial} -> entries() -></br>`);
+    let entrades = arrayInicial.entries();
 
-    document.writeln(`<br>5. ${arrayInicial} -> entries() -> ${entrades}</br>`);//TODOTODOTODOTODOTODOTODOTODOTODOGEMMANOTENOBLIDISSIUSPLAU
-
+      for (let entrada of entrades) {
+      document.write(`[${entrada[0]}, '${entrada[1]}'] <br>`);
+      }
+   
     //Funció booleana que et diu si es compleix una condició en tots els elements de l'array
     document.writeln(`<br>6. ${arrayInicial} -> arrayInicial.every('mesPetit') -> ${tots}</br>`);
 
@@ -120,7 +124,7 @@ function exerciciColors(){
 
     document.writeln('<br>');
     //Funció que retorna l'última posició de l'array 
-    document.writeln(`<br>20. ${arrayInicial} -> lastIndexOf() -> ${estaJoana}</br>`); //TODO
+    document.writeln(`<br>20. ${arrayInicial} -> lastIndexOf("Òscar") -> ${arrayInicial.lastIndexOf("Òscar")}</br>`); //TODO
 
     //Funció que retorna la longitut de l'array 
     document.writeln(`<br>21. ${arrayInicial} -> arrayInicial.length -> ${arrayInicial.length}</br>`);
@@ -143,35 +147,50 @@ function exerciciColors(){
     let joMateixa = new Alumne("Gemma","Garrigosa",28);
     document.writeln(`<br>24. ${JSON.stringify(joMateixa)} -> Alumne.prototype.nota = 10 -> valor afegit ${joMateixa.nota} </br>`); //he fet un json Stringify per mostrar l'objecte sencer, no ho faig en el resultat perque JSON.stringify 
                                                                                                                                     //no mostra les prototype només mostra les propietats propies de la classe, pendent de consultar-te a classe
-
- 
     //Et permet afegir un element al final de l'array i et retorna la seva posició 
-
     document.writeln(`<br>25. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    //
+    //Redueix els valors d'un array a un unic valor, d'esquerra a dreta.
+    let alumnesReduït= arrayInicial.reduce((alumne, nom) => alumne += ' ' + nom);
+    document.writeln(`<br>26. ${arrayInicial} -> arrayInicial.reduce((alumne, nom) => alumne += ' ' + nom)-> ${alumnesReduït}</br>`);
 
-    document.writeln(`<br>26. ${arrayInicial} -> reduce()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    // El mateix per o de dreta a esquerra 
+    let nombresReduïtsDreta = numeros.reduceRight((resultat, numero)=> resultat * numero);
+    document.writeln(`<br>27. ${numeros} -> numeros.reduceRight((resultat, numero)=> resultat * numero); -> ${nombresReduïtsDreta}</br>`);
 
-    document.writeln(`<br>27. ${arrayInicial} -> reduceRight() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    // Retorna array al revés 
+    document.writeln(`<br>28. ${arrayInicial} -> arrayInicial.reverse()->  ${arrayInicial.reverse()} </br>`);
+   
+    // Elimina el primer element de l'array 
+    document.writeln(`<br>29. ${arrayMutable} -> arrayMutable.shift() -> retorna: ${arrayMutable.shift()} (conté 2 Adrià ) modifica: ${arrayMutable} </br>`);
 
-    document.writeln(`<br>28. ${arrayInicial} -> reverse-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //Retorna els elements seleccionats d'un array com un array nou 
+    let nois = arrayMutable.slice(0,2);
+    document.writeln(`<br>30. ${arrayMutable} -> let nois = arrayMutable.slice(0,2); ->  ${nois} </br>`);
 
-    document.writeln(`<br>29. ${arrayInicial} -> shift() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //mira si alguns compleixen la condició 
+    let majorsA = arrayInicial.some((alumnes)=> alumnes > "a");
+    document.writeln(`<br>31. ${arrayInicial} -> arrayInicial.some((alumnes)=> alumnes > "a");-> ${majorsA} </br>`);
 
-    document.writeln(`<br>30. ${arrayInicial} -> slice() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //Ordena l'array 
+    document.writeln(`<br>32. ${arrayInicial} -> arrayInicial.sort() -> ${arrayInicial.sort()} </br>`);
 
-    document.writeln(`<br>31. ${arrayInicial} -> some() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //Afegeix o treu elements d'un array
+    document.writeln(`<br>33. ${arrayInicial} -> arrayInicial.splice(0,0,"Rulo","Neus"); -> );`);
+    arrayInicial.splice(0,0,"Rulo","Neus");
+    document.write(`${arrayInicial}<br>`);
 
-    document.writeln(`<br>32. ${arrayInicial} -> sort() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
-
-    document.writeln(`<br>33. ${arrayInicial} -> splice() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
     
-    document.writeln(`<br>34. ${arrayInicial} -> toString()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //Transforma a String separat per comes 
+    document.writeln(`<br>34. [1,2,3,4]  -> numeros.toString()-> ${numeros.toString()}</br>`);
 
-    document.writeln(`<br>35. ${arrayInicial} -> unshift()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //Afegeix un element al principi de l'array i retorna la longitut
+    document.writeln(`<br>35. ${arrayInicial} -> unshift()->)`);
+    arrayInicial.unshift("Laia","Harpreet");
+    document.write(`${arrayInicial}</br>`);
     
-    document.writeln(`<br>36. ${arrayInicial} -> valueOf()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //Retorna el valor primitiu d'un element
+    document.writeln(`<br>36. ${numeros} -> numeros.valueOf()->  ${numeros.valueOf()} </br>`);
  }
 
 
