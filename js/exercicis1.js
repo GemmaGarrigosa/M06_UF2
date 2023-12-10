@@ -120,7 +120,7 @@ function exerciciColors(){
 
     document.writeln('<br>');
     //Funció que retorna l'última posició de l'array 
-    document.writeln(`<br>20. ${arrayInicial} -> lastIndexOf() -> ${estaJoana}</br>`);
+    document.writeln(`<br>20. ${arrayInicial} -> lastIndexOf() -> ${estaJoana}</br>`); //TODO
 
     //Funció que retorna la longitut de l'array 
     document.writeln(`<br>21. ${arrayInicial} -> arrayInicial.length -> ${arrayInicial.length}</br>`);
@@ -132,30 +132,50 @@ function exerciciColors(){
     document.writeln(`<br>23. ${arrayInicial} -> arrayPop.pop() -> </br> retorna: ${tret} </br> modifica: ${arrayPop}</br>`);
 
     //Et permet afegir propietats i mètodes a un array 
-    document.writeln(`<br>24. ${arrayInicial} -> prototype -> ${estaJoana}</br>`);
 
+    function Alumne(nom,cognom,edat){
+      this.nom = nom; 
+      this.cognom = cognom;
+      this.edat = edat;
+    }
+    
+    Alumne.prototype.nota = 10;
+    let joMateixa = new Alumne("Gemma","Garrigosa",28);
+    document.writeln(`<br>24. ${JSON.stringify(joMateixa)} -> Alumne.prototype.nota = 10 -> valor afegit ${joMateixa.nota} </br>`); //he fet un json Stringify per mostrar l'objecte sencer, no ho faig en el resultat perque JSON.stringify 
+                                                                                                                                    //no mostra les prototype només mostra les propietats propies de la classe, pendent de consultar-te a classe
+
+ 
     //Et permet afegir un element al final de l'array i et retorna la seva posició 
 
     document.writeln(`<br>25. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>26. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    //
 
-    document.writeln(`<br>27. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>26. ${arrayInicial} -> reduce()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>28. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>27. ${arrayInicial} -> reduceRight() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>29. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>28. ${arrayInicial} -> reverse-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>30. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>29. ${arrayInicial} -> shift() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>31. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>30. ${arrayInicial} -> slice() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>32. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>31. ${arrayInicial} -> some() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
 
-    document.writeln(`<br>33. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>32. ${arrayInicial} -> sort() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+
+    document.writeln(`<br>33. ${arrayInicial} -> splice() -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
     
-    document.writeln(`<br>34. ${arrayInicial} -> arrayPush.push('Oriana') -> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    document.writeln(`<br>34. ${arrayInicial} -> toString()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+
+    document.writeln(`<br>35. ${arrayInicial} -> unshift()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
+    
+    document.writeln(`<br>36. ${arrayInicial} -> valueOf()-> </br> retorna: ${posat} </br> modifica: ${arrayPush}</br>`);
  }
+
+
+//Funcions extres que he fet servir pels exercicis 
 
  function trovaVero(arrayInicial){
    return arrayInicial ==='Vero';
